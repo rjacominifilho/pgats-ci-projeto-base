@@ -8,7 +8,7 @@ name: "Execução Automática"
 
 on:
   schedule:
-  - cron: '06 20 * * *'
+  - cron: '09 20 * * *'
     uses: szenius/set-timezone@v2.0
     with:
       timezoneLinux: "America/Sao_Paulo"
