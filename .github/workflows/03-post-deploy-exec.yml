@@ -1,18 +1,16 @@
-#CI de Nível 02 - Disparo automático em períodos definidos
+#CI de Nível 03 - Disparo automático sempre que outro for concluído, como o deploy
 
 #Nome que vai aparecer nas opções de pipe
-name: "Execução Agendada"
+name: "Execução por Deploy"
 
 #Regras de dispado da execução (triggers)
-#gatilho de execução em períodos definidos = schedule
+#gatilho de execução após outro workflow = workflow_run
 
 on:
-  schedule:
-  - cron: '20 17 * * *'
-    uses: szenius/set-timezone@v2.0
-    with:
-      timezoneLinux: "America/Sao_Paulo"
-  
+  workflow_run:
+    workflows: ['Execução Manual']
+    types:
+      - completed
 
 jobs:
 
