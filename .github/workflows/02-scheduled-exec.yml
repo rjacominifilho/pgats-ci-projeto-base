@@ -7,11 +7,12 @@ name: "Execução Automática"
 #gatilho de execução agendada = schedule
 
 on:
-  uses: szenius/set-timezone@v2.0
-  with:
-    timezoneLinux: "America/Sao_Paulo"
   schedule:
   - cron: '06 20 * * *'
+    uses: szenius/set-timezone@v2.0
+    with:
+      timezoneLinux: "America/Sao_Paulo"
+  
 
 jobs:
 
