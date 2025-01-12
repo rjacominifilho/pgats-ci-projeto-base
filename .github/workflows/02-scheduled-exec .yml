@@ -8,7 +8,7 @@ name: "Execução Automática"
 
 on:
   schedule:
-    - cron: '45 19 * * *'
+    - cron: '50 16 * * *'
 
 jobs:
 
