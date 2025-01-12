@@ -1,30 +1,26 @@
 #CI de Nível 02 - Disparo automático em períodos definidos
 
 #Nome que vai aparecer nas opções de pipe
-name: "Execução Agendada"
+name: 'Execução Agendada'
 
 #Regras de dispado da execução (triggers)
 #gatilho de execução em períodos definidos = schedule
 
 on:
   schedule:
-  - cron: '20 17 * * *'
-    uses: szenius/set-timezone@v2.0
-    with:
-      timezoneLinux: "America/Sao_Paulo"
-  
+    - cron: '20 17 * * *'
+      uses: szenius/set-timezone@v2.0
+      with:
+        timezoneLinux: 'America/Sao_Paulo'
 
 jobs:
-
   #Descrição do jobe
   e2e-tests:
-
     #máquina que o job vai executar
     runs-on: ['ubuntu-latest']
 
     #passo a passo das ações do job
     steps:
-
       - uses: actions/checkout@v4
 
       # - uses: actions/setup-node@v4

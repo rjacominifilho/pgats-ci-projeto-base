@@ -1,7 +1,7 @@
 #CI de Nível 03 - Disparo automático sempre que outro for concluído, como o deploy
 
 #Nome que vai aparecer nas opções de pipe
-name: "Execução por Deploy"
+name: 'Execução por Deploy'
 
 #Regras de dispado da execução (triggers)
 #gatilho de execução após outro workflow = workflow_run
@@ -13,16 +13,15 @@ on:
       - completed
 
 jobs:
-
   #Descrição do jobe
   e2e-tests:
-
     #máquina que o job vai executar
     runs-on: ['ubuntu-latest']
 
+    if: ${{ github.event.workflow_run.conclusion = 'sucess' }}
+
     #passo a passo das ações do job
     steps:
-
       - uses: actions/checkout@v4
 
       # - uses: actions/setup-node@v4
